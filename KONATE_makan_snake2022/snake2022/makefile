@@ -4,6 +4,8 @@ EXEC=snake
 SRC= $(wildcard src/*.c)
 LDFLAGS= -W -Wall -ansi -pedantic -g -lMLV
 
+# Create the bin directory if it does not exist
+$(shell mkdir -p bin)
 
 $(EXEC): bin/game.o bin/grid.o bin/snake.o
 	$(CC) -o bin/$@ $^ $(LDFLAGS)
